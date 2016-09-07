@@ -6,26 +6,34 @@
     <title>Shintech</title>
     <meta charset="utf-8">
     
-    <link rel="stylesheet" type="text/css" href="shintech.css">
     <script id="navbarTemplate" type="text/template">
+      <div id="logo" class="navbar-brand active">Shintech</div>
       <ul id="navbarList">
-        <button id="homeButton">Home</button>
-        <button id="servicesButton">Services</button>
-        <button id="contactsButton">Contact</button>
+        <button id="homeButton" class="btn btn-inverse">Home</button>
+        <button id="servicesButton" class="btn btn-inverse">Services</button>
+        <button id="contactsButton" class="btn btn-inverse">Contact</button>
       </ul>
-      <div id="logo">LOGO</div>
     </script>
     
     <script type="text/template" id="homeTemplate">
       <h1>Welcome to Shintech!</h1>
+      <p>Providing tech support in Coffeyville since 2014.</p>
     </script>
     
     <script type="text/template" id="servicesTemplate">
       <h1>Services</h1>
+      <ul>
+        <li>Tech Support</li>
+        <li>Computer Repair</li>
+        <li>House Calls</li>
     </script>
     
     <script type="text/template" id="contactTemplate">
       <h1>Contact</h1>
+      <ul>
+        <li>Phone: PhoneNumber</li>
+        <li>Email: Email</li>
+      </ul>
     </script>
     
     <script
@@ -35,11 +43,14 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>
 		<script src="app.js"></script>
+
 		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		
-		
+		<link rel="stylesheet" type="text/css" href="shintech.css">
+
   </head>
   
   <body>
