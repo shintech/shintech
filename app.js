@@ -1,9 +1,26 @@
 var NavbarView = Backbone.View.extend({
   tagName: 'nav',
+  initialize: function(options){
+    this.router = options.router
+  },
+  events: {
+    'click #homeButton': "navigateHome",
+    'click #servicesButton': 'navigateServices',
+    'click #contactsButton': 'navigateContacts'
+  },
   template: _.template($("#navbarTemplate").html()),
   render: function(){
     this.$el.html(this.template());
     return this;
+  },
+  navigateHome: function(){
+    this.router.navigate('', { trigger: true })
+  },
+  navigateServices: function(){
+    this.router.navigate('services', { trigger: true })
+  },
+  navigateContacts: function(){
+    this.router.navigate('contacts', { trigger: true })
   }
 });
 
@@ -42,27 +59,21 @@ var ApplicationRouter = Backbone.Router.extend({
   },
   home: function(){
     var homeView = new HomeView;
-    $('#main').append(homeView.render().el);
+    $('#main').html(homeView.render().el);
   },
   services: function(){
     var servicesView = new ServicesView;
-    $('#main').append(servicesView.render().el);
+    $('#main').html(servicesView.render().el);
+  },
+  contacts: function(){
+    var contactView = new ContactView;
+    $('#main').html(contactView.render().el);
   }
 });
 
 $(function(){
-  var navbarView = new NavbarView;
-  $('#navbar').html(navbarView.render().el);
   var applicationRouter = new ApplicationRouter
+  var navbarView = new NavbarView({ router: applicationRouter });
+  $('#navbar').html(navbarView.render().el);
   Backbone.history.start()
 });
-
-// var navbarView = new NavbarView;
-// var homeView = new HomeView;
-// var servicesView = new ServicesView;
-// var contactView = new ContactView;
-
-// $('#navbar').html(navbarView.render().el);
-// $('#main').append(homeView.render().el);
-// $('#main').append(servicesView.render().el);
-// $('#main').append(contactView.render().el);
