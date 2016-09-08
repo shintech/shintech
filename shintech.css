@@ -7,7 +7,7 @@
 }
 
 #navbarList li {
-    float: left;
+    float: right;
 }
 
 #navbarList li a {
@@ -24,7 +24,16 @@
 
 
 #logo {
-  float: right;
+  float: left;
   background-color: #4C7F50;
 
+}
+
+#phoneNumber {
+    float: left;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
