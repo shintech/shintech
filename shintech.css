@@ -1,39 +1,44 @@
 #navbarList {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
 
 #navbarList li {
-    float: right;
+  float: left;
 }
 
 #navbarList li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 #navbarList li a:hover:not(.active) {
-    background-color: #111;
+  background-color: #111;
 }
 
 
 #logo {
   float: left;
   background-color: #4C7F50;
-
+  color: Black;
+  text-align: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  font-style: oblique;
 }
 
 #phoneNumber {
-    float: left;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  float: right;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
