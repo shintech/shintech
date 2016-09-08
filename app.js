@@ -1,3 +1,7 @@
+_.templateSettings = {
+    interpolate: /\{\{(.+?)\}\}/g
+};
+
 var NavbarView = Backbone.View.extend({
   tagName: 'nav',
   initialize: function(options){
@@ -51,6 +55,33 @@ var ContactView = Backbone.View.extend({
   }
 });
 
+var Post = Backbone.Model.extend({
+});
+
+var Posts = Backbone.Collection.extend({
+  model: Post
+});
+
+var PostView = Backbone.View.extend({
+  tagName: 'article',
+  template: _.template($('#postTemplate').html()),
+  render: function(){
+    this.$el.html(this.template(this.model.toJSON()));
+    return this;
+  }
+});
+
+var PostsView = Backbone.View.extend({
+  render: function(){
+    this.collection.each(this.addPost, this);
+    return this;
+  },
+  addPost: function(post){
+    var postView = new PostView({model: post});
+    this.$el.append(postView.render().el)
+  }
+});
+
 var ApplicationRouter = Backbone.Router.extend({
   routes: {
     '': 'home',
@@ -59,7 +90,15 @@ var ApplicationRouter = Backbone.Router.extend({
   },
   home: function(){
     var homeView = new HomeView;
+    var posts = new Posts([
+      {
+      title: 'testPost',
+      content: 'this is a test post'
+      }
+    ]);
+    var testPostView = new PostsView({collection: posts});
     $('#main').html(homeView.render().el);
+    $('#main').append(testPostView.render().el)
   },
   services: function(){
     var servicesView = new ServicesView;
